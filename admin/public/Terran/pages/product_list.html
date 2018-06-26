@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>产品列表</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="style/adminStyle.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery.js"></script>
+<script src="js/public.js"></script>
+</head>
+<body>
+ <div class="wrap">
+  <div class="page-title">
+    <span class="modular fl"><i></i><em>产品列表</em></span>
+    <span class="modular fr"><a href="add_product.html" class="pt-link-btn">+添加商品</a></span>
+  </div>
+  <div class="operate">
+   <form>
+    <select class="inline-select">
+     <option>A店铺</option>
+     <option>B店铺</option>
+    </select>
+    <input type="text" class="textBox length-long" placeholder="输入产品名称..."/>
+    <input type="button" value="查询" class="tdBtn"/>
+   </form>
+  </div>
+  <table class="list-style Interlaced">
+   <tr>
+    <th>ID编号</th>
+    <th>产品</th>
+    <th>名称</th>
+    <th>价格</th>
+    <th>库存</th>
+    <th>描述</th>
+    <th>分类</th>
+    <th>参数</th>
+    <th>介绍图</th>
+    <th>供货商</th>
+    <th>操作</th>
+   </tr>
+   <tbody id="product-table"></tbody>
+  </table>
+ </div>
+<div class="load-more">点击加载更多</div>
+<div class="no-more">没有更多订单了</div>
+ <div class="global-tips">
+        <p></p>
+    </div>
+</body>
+<script src="js/common.js" type="application/javascript"></script>
+<script src="js/jquery-1.8.2.min.js" type="application/javascript"></script>
+<script src="js/product.js" type="application/javascript"></script>
+</html>

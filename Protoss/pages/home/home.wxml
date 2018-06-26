@@ -1,0 +1,66 @@
+<import src="../tpls/products/products-tpl.wxml"/>
+<view class="container home-container" hidden="{{!loadingHidden}}">
+    <swiper indicator-dots="true" circular="true" autoplay="true" class="swiper" hidden="{{inputShowed}}">
+        <block wx:for="{{bannerArr}}" wx:key="item">
+            <swiper-item class="banner-item" bindtap="onProductsItemTap" data-id="{{item.key_word}}">
+                <image class="item-image" src="{{item.img.url}}" mode="aspectFill" />
+            </swiper-item>
+        </block>
+    </swiper>
+    <!--搜索-->
+
+        <view class="weui-search-bar">
+            <view class="weui-search-bar__form">
+                <view class="weui-search-bar__box">
+                    <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+                    <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputName}}" focus="{{inputShowed}}" bindinput="clearVal" bindconfirm="inputTyping" />
+                    <view class="weui-icon-clear" wx:if="{{inputName.length > 0}}" bindtap="clearInput">
+                        <icon type="clear" size="14"></icon>
+                    </view>
+                </view>
+                <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+                    <icon class="weui-icon-search" type="search" size="14"></icon>
+                    <view class="weui-search-bar__text">搜索</view>
+                </label>
+            </view>
+            <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+        </view>
+        <view class="weui-cells searchbar-result" wx:if="{{inputVal.length > 0}}">
+<!--         <block wx:for='{{inputVal}}' wx:key="item">
+            <navigator url="../product/product?id={{item.id}}" class="weui-cell" hover-class="weui-cell_active">
+                <view class="weui-cell__bd">
+                    <view>{{item.name}}</view>
+                </view>
+            </navigator>
+        </block> -->
+        <view class="home-main-products">
+            <view class="home-main-header">搜索结果</view>
+            <template is="search" data="{{searchData:inputVal}}"/>
+        </view>
+        </view>
+        <!--搜索结束-->
+    <view class="home-main" hidden="{{inputShowed}}">
+        <!--主题精选-->
+        <view class="home-main-theme">
+            <view class="home-main-header">精选主题</view>
+            <view class="theme-box">
+                <block wx:for="{{themeArr}}" wx:key="item">
+                    <view wx:if="{{index==2}}" class="theme-item big" bindtap="onThemesItemTap" data-id="{{item.id}}" data-name="{{item.name}}">
+                        <image src="{{item.topic_img.url}}"></image>
+                    </view>
+                    <view wx:else class="theme-item" bindtap="onThemesItemTap" data-id="{{item.id}}" data-name="{{item.name}}">
+                        <image src="{{item.topic_img.url}}"></image>
+                    </view>
+                </block>
+            </view>
+        </view>
+        <!--单品首发-->
+        <view class="home-main-products">
+            <view class="home-main-header">最近新品</view>
+            <template is="products" data="{{productsArr:productsArr}}"/>
+        </view>
+    </view>
+</view>
+<loading hidden="{{loadingHidden}}">
+    加载中...
+</loading>

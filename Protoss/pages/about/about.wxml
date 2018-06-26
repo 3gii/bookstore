@@ -1,0 +1,19 @@
+<!--pages/about/about.wxml-->
+<view class="container">
+  <view class="userinfo">
+      <image class="userinfo-avatar" src="../../imgs/toolbar/logo.png" background-size="cover"></image>
+      <text class="userinfo-nickname">校园街坊</text>
+      <text class="userinfo-nickname">版本:V1.0.1</text>
+  </view>
+  <view class="content">
+  <block wx:for="{{help}}" wx:key="item">
+    <view><text class="title">{{item.title}}</text>{{item.content}}</view>
+  </block>
+  <view><text class="title">客服信息：</text><text  class="red" ontap="call">点击联系手机</text> 点击图标咨询 <contact-button /></view>
+  
+  </view>
+ 
+</view>
+ <view class="footer">
+    CopyRight © created by 海棠依旧
+  </view>

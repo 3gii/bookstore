@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>订单列表</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="style/adminStyle.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+ <div class="wrap">
+  <div class="page-title">
+    <span class="modular fl"><i class="order"></i><em>订单列表</em></span>
+     <div class="fr top-link">
+  <a href="#" title="安全退出" style="background:rgb(60,60,60); height:50px; line-height: 50px;"><i class="quitIcon"></i><span id="login-out">安全退出</span></a>
+ </div>
+  </div>
+  <table class="list-style Interlaced">
+   <tr>
+    <th>订单编号</th>
+    <th>名称</th>
+    <th>订单金额</th>
+    <th>订单状态</th>
+    <th>操作</th>
+   </tr>
+   <tbody id="order-table">
+
+    </tbody>
+  </table>
+<div class="load-more">点击加载更多</div>
+<div class="no-more">没有更多订单了</div>
+ <div class="global-tips">
+        <p></p>
+    </div>
+</body>
+<script src="js/common.js" type="application/javascript"></script>
+<script src="js/jquery-1.8.2.min.js" type="application/javascript"></script>
+<script src="js/index1.js" type="application/javascript"></script>
+</html>
